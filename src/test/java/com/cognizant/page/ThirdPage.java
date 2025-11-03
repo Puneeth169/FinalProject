@@ -62,6 +62,7 @@ public class ThirdPage {
 		submitBtn.click();
 	}
 	public void displayErrorMsg() {
-		System.out.println("Error Message:"+errorMsg.getText());
+		System.out.println("Error Message: ");
+		System.out.println(errorMsg.getText());
 	}
 }
