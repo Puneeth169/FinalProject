@@ -18,7 +18,9 @@ public class Main extends BaseClass {
 	@Test
 	public void req1(ITestContext context) {
 		mainPage=(MainPage)context.getAttribute("MainPage");
-//		page=mainPage.searchFor("Web Development");
+		page=mainPage.searchCourses("Web Development");
+		page.applyFilters();
+		page.displayTopCourses(2);
 	}
 	
 	@Test
