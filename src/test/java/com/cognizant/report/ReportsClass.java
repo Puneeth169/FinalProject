@@ -10,7 +10,7 @@ public class ReportsClass {
 	
 	public static void createReport() {
 		reports=new ExtentReports();
-		ExtentSparkReporter reporter=new ExtentSparkReporter("test-output/projectReport.html");
+		ExtentSparkReporter reporter=new ExtentSparkReporter("projectReport.html");
 		reports.attachReporter(reporter);
 	}
 	
