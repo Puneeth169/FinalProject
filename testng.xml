@@ -1,0 +1,11 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<suite name="FirstSuite">
+	<test name="FirstTest">
+		<listeners>
+			<listener class-name="com.cognizant.listener.ListenerClass"/>
+		</listeners>
+		<classes>
+			<class name="com.cognizant.project.Main"/>
+		</classes>
+	</test>
+</suite>
