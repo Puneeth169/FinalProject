@@ -30,12 +30,10 @@ public class Main extends BaseClass {
 	@Test
 	public void req3(ITestContext context) {
 		try {
-		mainPage=page.toMainPage(context);
-//		businessPage = mainPage.businessPage();
-//		businessPage.scrollTo();
-//		businessPage.submitForm();
-//		String errorMsg=businessPage.displayErrorMsg();
-		//System.out.println("Error Message: "+errorMsg);
+			mainPage=page.toMainPage(context);
+			businessPage = mainPage.businessPage();
+			businessPage.submitForm();
+			businessPage.displayErrorMsg();
 		}
 		catch(Exception e) {
 			System.out.println(e.getLocalizedMessage());
