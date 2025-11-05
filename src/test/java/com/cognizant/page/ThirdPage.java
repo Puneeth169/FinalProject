@@ -40,25 +40,25 @@ public class ThirdPage {
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void submitForm() {
+	public void submitForm(String[] data) {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		jse.executeScript("arguments[0].scrollIntoView(true);", firstName);
-		firstName.sendKeys("Kunal");
-		lastName.sendKeys("");
-		email.sendKeys("kunalnarang");
-		phoneNo.sendKeys("9876543210");
+		firstName.sendKeys(data[0]);
+		lastName.sendKeys(data[1]);
+		email.sendKeys(data[2]);
+		phoneNo.sendKeys(data[3]);
 		Select s = new Select(organization);
-		s.selectByVisibleText("Business");
-		jobTitle.sendKeys("QEA");
-		companyName.sendKeys("Cognizant");
+		s.selectByVisibleText(data[4]);
+		jobTitle.sendKeys(data[5]);
+		companyName.sendKeys(data[6]);
 		Select s1 = new Select(companySize);
-		s1.selectByValue("1-500"); 
+		s1.selectByValue(data[7]); 
 		Select s2 = new Select(describeNeeds);
-		s2.selectByValue("Courses for myself");
+		s2.selectByValue(data[8]);
 		Select s3 = new Select(country);
-		s3.selectByValue("India");
+		s3.selectByValue(data[9]);
 		Select s4 = new Select(state);
-		s4.selectByValue("Andhra Pradesh");
+		s4.selectByValue(data[10]);
 		submitBtn.click();
 	}
 	public void displayErrorMsg() {

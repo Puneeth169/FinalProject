@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.ITestContext;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import com.cognizant.exception.UnsupportedBrowserException;
 import com.cognizant.page.MainPage;
@@ -29,10 +29,16 @@ public class BaseClass {
 		return null;
 	}
 	
-	@BeforeTest
+	@BeforeMethod
 	public void createDriver(ITestContext context) {
 		Properties props=loadPropFile();
-		String browserName=props.getProperty("driver.name");
+		String browserName="";
+		if(Math.round(Math.random())==0){
+			browserName=props.getProperty("driver.edge");
+		}
+		else {
+			browserName=props.getProperty("driver.chrome");
+		}
 		String url=props.getProperty("driver.url");
 		try {
 			if(browserName.equals("chrome")) {
@@ -55,7 +61,7 @@ public class BaseClass {
 		}
 	}
 	
-	@AfterTest
+	@AfterMethod
 	public void close() {
 		try {			
 			driver.quit();
