@@ -18,7 +18,7 @@ public class BaseClass {
 	
 	public static Properties loadPropFile() {
 		try {
-			FileReader read=new FileReader("config.properties");
+			FileReader read=new FileReader("src/test/resources/config.properties");
 			Properties props=new Properties();
 			props.load(read);
 			return props;
